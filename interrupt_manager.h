@@ -1,0 +1,6 @@
+#ifndef _INTERRUPT_MANAGER_H
+#define _INTERRUPT_MANAGER_H
+
+void INTERRUPT_INIT();
+
+#endif
