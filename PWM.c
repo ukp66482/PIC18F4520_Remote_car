@@ -20,12 +20,14 @@ void PWM_INIT(){
     PR2 = 0xff; //512us PWM period
     
     //duty cycle
-    CCPR1L = 0xf0;
+    CCPR1L = 0x00;
     CCP1CONbits.DC1B = 0b00;
+    
     return;
 }
 
-void PWM_Modify(int num){ // 1024 > num >= 0
+void PWM_Modify(int num){ // 256 > num >= 0
     CCPR1L = (num >> 2);
     CCP1CONbits.DC1B = num & 0x0003;
+    //LATCbits.LATC2 = 1;
 }
